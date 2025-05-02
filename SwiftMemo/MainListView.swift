@@ -13,15 +13,7 @@ struct MainListView: View {
     var body: some View {
         NavigationView {
             List(store.list){ memo in
-                VStack(alignment: .leading) {
-                    Text(memo.Content)
-                        .font(.body)
-                        .lineLimit(1)
-                    
-                    Text(memo.inserDate, style: .date)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
+                MemoCell(memo: memo)
             }
             .listStyle(.plain)
             .navigationTitle(Text("Memos"))
@@ -35,3 +27,4 @@ struct MainListView_Previews: PreviewProvider {
             .environmentObject(MemoStore())
     }
 }
+
