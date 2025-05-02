@@ -13,29 +13,31 @@ class MemoStore: ObservableObject{
     init() {
         list = [
             Memo(Content: "Hello, world", inserDate: Date.now),
-            Memo(Content: "Hello, wor", inserDate: Date.now.addingTimeInterval(3600 * -24)),
-            Memo(Content: "Hello, w", inserDate: Date.now.addingTimeInterval(3600 * -48))
+            Memo(Content: "Awesome", inserDate: Date.now.addingTimeInterval(3600 * -24)),
+            Memo(Content: "SwiftUI", inserDate: Date.now.addingTimeInterval(3600 * -48))
         ]
     }
     
     func insert(memo: String){
-        list.insert(Memo(Content: memo), at:0)
+        list.insert(Memo(Content: memo), at: 0)
     }
     
     func update(memo: Memo?, content: String){
-        guard let memo = memo else {
+        guard let memo = memo else{
             return
         }
-        memo.content = content
+        
+        memo.Content = content
     }
     
     func delete(memo: Memo){
-        list.removeAll { $0.id === memo.id }
+        list.removeAll { $0.id == memo.id}
     }
     
-    func clear(){
+    func delete(set: IndexSet){
         for index in set{
             list.remove(at: index)
         }
     }
+    
 }
