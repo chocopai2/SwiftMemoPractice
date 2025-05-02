@@ -27,7 +27,7 @@ class MemoStore: ObservableObject{
             return
         }
         
-        memo.Content = content
+        memo.content = content
     }
     
     func delete(memo: Memo){

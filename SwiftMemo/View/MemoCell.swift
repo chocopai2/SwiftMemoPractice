@@ -11,7 +11,7 @@ struct MemoCell: View {
     @ObservedObject var memo: Memo //메모가 업데이트 되는순간 뷰도 업데이트 됨
     var body: some View {
         VStack(alignment: .leading) {
-            Text(memo.Content)
+            Text(memo.content)
                 .font(.body)
                 .lineLimit(1)
             
