@@ -1,9 +1,3 @@
-//
-//  MainListView.swift
-//  SwiftMemo
-//
-//  Created by wangjun on 5/2/25.
-//
 
 import SwiftUI
 
